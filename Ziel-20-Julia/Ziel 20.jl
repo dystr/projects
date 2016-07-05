@@ -22,13 +22,20 @@ function move1(score,roll)
     println(score)
     println("You'r roll is $roll !")
     if readline(STDIN)== "+"
-        game(2,[score[1]+=roll,score[2]])
+        game(2,[score[1]+roll,score[2]])
     else
-        game(2,[score[1]-=roll,score[2]])
+        game(2,[score[1]-roll,score[2]])
     end
 end
 
 function move2(score,roll)
-    score[2]+=roll
-    game(1,score)
+    if score[2]+roll >= 20
+        game(1,[score[1],score[2]+roll])
+    elseif score[1] + 4 >= 20
+        game(1,[score[1]-roll,score[2]])
+    else
+        game(1,[score[1],score[2]+roll])
+    end
+    #score[2]+=roll
+    #game(1,score)
 end
