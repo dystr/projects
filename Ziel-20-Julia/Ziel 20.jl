@@ -1,6 +1,6 @@
 function game(player=1,score=[0,0])
-    if score[1] == 20; println("Player 1 wins!")
-        elseif score[2] == 20; println("Player 2 wins!")
+    if score[1] >= 20; println("Player 1 wins!")
+        elseif score[2] >= 20; println("Player 2 wins!")
     else
         move(player,score)
     end
